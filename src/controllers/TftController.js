@@ -14,13 +14,4 @@ router.get('/:summonerNickname', async (req, res) => {
     };
 });
 
-// router.get('/lol', (req, res) => {
-
-//     try {
-//         return res.jsonOk();
-//     } catch (error) {
-//         return res.jsonBadRequest({ error });
-//     };
-// });
-
 module.exports = router;
