@@ -7,6 +7,7 @@ const fetchData = async (summonerPuuid) => {
             .then(({ data }) => data)
             .catch(e => res.status(e.response.status).json(e.response.data));
 
+    // Try to make this lolMatchDate simpler later 
     const lolMatchesData = await Promise.all([
         doGetRequest(`${MATCHES_BASE_URL}/lol/match/v5/matches/${lolMatchesIds[0]}`)
             .then(({ data }) => data)
@@ -40,7 +41,7 @@ const fetchData = async (summonerPuuid) => {
             .catch(e => res.status(e.response.status).json(e.response.data)),
     ]);
 
-    return lolMatchesData[1];
+    return lolMatchesData;
 };
 
 export default { fetchData };

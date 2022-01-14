@@ -4,11 +4,11 @@ import LolRankService from 'services/LolRankService';
 
 const router = express.Router();
 
-router.get('/:summonerNickname', async (req, res) => {
-    const summonerNickname = req.params.summonerNickname;
+router.get('/rank/:summonerId', async (req, res) => {
+    const summonerId = req.params.summonerId;
 
     try {
-        const lolRankData = await LolRankService.fetchData(summonerNickname);
+        const lolRankData = await LolRankService.fetchData(summonerId);
         return res.send(lolRankData);
     } catch (error) {
         return res.send(`error: ${error}`);

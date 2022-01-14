@@ -3,11 +3,11 @@ import TftRankService from 'services/TftRankService';
 
 const router = express.Router();
 
-router.get('/:summonerNickname', async (req, res) => {
-    const summonerNickname = req.params.summonerNickname;
+router.get('/rank/:summonerId', async (req, res) => {
+    const summonerId = req.params.summonerId;
 
     try {
-        const tftData = await TftRankService.fetchData(summonerNickname);
+        const tftData = await TftRankService.fetchData(summonerId);
         return res.send(tftData);
     } catch (error) {
         return res.send(`error: ${error}`);
