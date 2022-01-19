@@ -1,18 +1,15 @@
 import express, { json } from 'express';
 import cors from 'cors';
-import TftRouter from 'controllers/TftController';
 import LolRouter from 'controllers/LolController';
 import SummonerRouter from 'controllers/SummonerController';
 
 const app = express();
 const port = 3001;
 
-app.use(json());
 app.use(cors());
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
-app.use('/tft', TftRouter);
 app.use('/lol', LolRouter);
 app.use('/summoner', SummonerRouter);
 
