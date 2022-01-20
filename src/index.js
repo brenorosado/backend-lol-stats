@@ -15,5 +15,5 @@ app.use('/summoner', SummonerRouter);
 
 
 app.get('/', async (req, res) => {
-    res.send('Use localhost:3001/tft/summonerNickname or localhost:3001/lol/summonerNickname to get data');
+    res.send('Use localhost:3001/summoner/:summonerNickname, localhost:3001/lol/rank/:summonerId, localhost:3001/lol/matches/:summonerPuuid to get data');
 });
